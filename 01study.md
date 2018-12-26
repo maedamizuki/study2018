@@ -33,7 +33,7 @@ ROOTの起動は、
 ROOT -l  
 ```  
 
-ここで先ほどのtautau.rootファイルにROOT上で見たい時は、  
+ここで先ほどのtautau.rootファイルにROOT上で見たい時は、  
 ```php:terminal  
 ROOT -l ../run/event1/tautau.root  
 ```  
@@ -42,7 +42,7 @@ ROOT -l ../run/event1/tautau.root
 ```php:terminal  
 t->Scan("event.Particle.mPx")  
 ```  
-このように行うと、terminal上でx成分の運動量を表示することができたと思う。  
+このように行うと、terminal上でx成分の運動量を表示することができたと思う。  
 plotをして、グラフで見たい時は`Draw`の機能を行うとキャンバスにplotされたと思う。  
 
 今回は、クラス化して解析用のファイルに自分でコードを書いていくことにする。  
@@ -52,10 +52,10 @@ t->MakeClass("クラス名")
 ```  
 とすると、クラスが作られ`クラス名.h`と`クラス名.C`というファイルが作られたと思う。  
 
-上記の場合は、解析を行いたいROOTファイルが1つの場合は良いのだが、今回は10万イベント生成したため、10個のROOTファイルが存在する。そのため、`Chain`という機能を使って、次々とROOTファイルを読んでもらうようにする。  
+上記の場合は、解析を行いたいROOTファイルが1つの場合は良いのだが、今回は10万イベント生成したため、10個のROOTファイルが存在する。そのため、`Chain`という機能を使って、次々とROOTファイルを読んでもらうようにする。  
 ```php:terminal  
 TChain* chain = new TChain("")  
-chain->Add("解析を行いたいROOTファイルの指定場所")  
+chain->Add("解析を行いたいROOTファイルの指定場所")  
 chain->Add("")  
 …  
 chain->MakeClass("クラス名")  
